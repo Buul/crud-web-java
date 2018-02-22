@@ -7,18 +7,100 @@ body, input {
 
 input[type=text], input[type=password] {
 	width: 200px;
-	margin: 2px;
+	margin: 1px;
 }
 
-input[type=submit]{
+input[type=submit] {
 	width: 100px;
 	font-weight: bold;
 	padding: 2px 10px;
-	margin: 2px;
+	margin-top: 10px;
 }
 
 fieldset#fieldset_Login {
 	margin: auto;
-	width: 250px;
-	padding: 50px;
+	width: 180px;
+	padding: 30;
 }
+
+.label {
+	float: left;
+	text-align: right;
+	line-height: 1.9em;
+	padding-right: 2px;
+}
+
+.campo input {
+	float: right;
+}
+
+.legend {
+	font-size: 17px;
+	font-weight: bold;
+	color: gray;
+}
+
+.campo a {
+	padding-right: 93px;
+	float: right;
+	padding-top: 10px;	
+}
+
+.main {
+	min-height: 500px;
+	clear: both;
+}
+
+/* Estilo do cabeçalho e rodapé */
+.rodape {
+	padding: 5px;
+	border-top: 1px dotted gray;
+}
+
+.cabecalho  {
+	border-bottom: 1px dotted gray;
+	min-height: 60px
+}
+
+.cabecalho a{
+	text-decoration: none;
+}
+
+.cabecalho a:hover{
+	text-decoration: underline;
+}
+
+.cabecalho .logo {
+	float: left;
+}
+
+.cabecalho .logo img {
+    width: 14%;
+    position: absolute;
+    top: -2px;
+}
+
+.cabecalho ul, .cabecalho ol {
+	float: right;
+	list-style: none;
+}
+
+.cabecalho li{
+	float: left;
+	margin: 0px 4px;
+	border-right: 1px solid gray;
+	padding-right: 5px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

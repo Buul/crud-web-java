@@ -8,21 +8,28 @@
 <title>Login</title>
 </head>
 <body>
-	<form method="post" >
+	<form method="post">
 		<fieldset id="fieldset_Login">
-		<legend>Login do Sistema</legend>
+			<legend class="legend">Login do Sistema</legend>
 			<div class="campo">
-				<label for="Login"></label>
-				 <input type="text" id="Login" name="Login" maxlength="15" />
+				<div class="label">
+					<label for="Login">Login</label>
+				</div>
+				<input type="text" id="Login" name="Login" maxlength="15" />
 			</div>
 
 			<div class="campo">
-				<label for="senha"></label> 
-				<input type="password" id="senha" name="senha"  maxlength="15" />
+				<div class="label">
+					<label for="senha">Senha</label>
+				</div>
+				<input type="password" id="senha" name="senha" maxlength="15" />
 			</div>
 
 			<div class="campo">
 				<input type="submit" value="Logar" />
+			</div>
+			<div class="campo">
+				<a href="">Esqueci a senha</a>
 			</div>
 		</fieldset>
 	</form>

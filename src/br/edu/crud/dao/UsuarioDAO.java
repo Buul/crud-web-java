@@ -5,12 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import br.edu.crud.dto.UsuarioDTO;
 import br.edu.crud.exception.PersistException;
 import br.edu.crud.util.conectorUtil;
 
 public class UsuarioDAO {
 
-	public boolean validarUsuario(String usuario, String senha) throws PersistException {
+	public boolean validarUsuario(UsuarioDTO usuarioDTO) throws PersistException {
 		try {
 			Connection connector = conectorUtil.getConection();
 
@@ -19,8 +20,8 @@ public class UsuarioDAO {
 			sql.append(" WHERE USUARIO = ? AND SENHA= ?");
 
 			PreparedStatement statement = connector.prepareStatement(sql.toString());
-			statement.setString(1, usuario);
-			statement.setString(2, senha);
+			statement.setString(1, usuarioDTO.getUsuario());
+			statement.setString(2, usuarioDTO.getSenha());
 
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {

@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.edu.crud.BO.UsuarioBO;
+import br.edu.crud.exception.NegocioException;
+
 @WebServlet("/main")
 public class MainServlet extends HttpServlet {
 
@@ -28,6 +31,15 @@ public class MainServlet extends HttpServlet {
 			break;
 		case "cadastros":
 			proxima = "cadastros.jsp";
+			break;
+		case "login":
+			try {
+				new UsuarioBO().validarUsuario(request);
+			} catch (NegocioException e) {
+				request.setAttribute("msgErro", e.getMessage());
+				proxima = "login.jsp";
+			}
+			proxima = "index.jsp";
 			break;
 		default:
 			proxima = "index.jsp";

@@ -24,14 +24,11 @@ public class UsuarioDAO {
 			statement.setString(2, usuarioDTO.getSenha());
 
 			ResultSet resultSet = statement.executeQuery();
-			while (resultSet.next()) {
-				return resultSet.next();
-			}
+			return resultSet.next();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 			throw new PersistException(e);
 		}
-		return false;
 	}
 
 }

@@ -8,21 +8,24 @@
 <title>Login</title>
 </head>
 <body>
-	<form method="post">
+	<form method="post" action="main?acao=login">
+		<div class="erroDiv" style="display: ${msgErro != null ? 'block' : 'none'}">
+			${msgErro != null ? msgErro : ''}
+		</div>
 		<fieldset id="fieldset_Login">
 			<legend class="legend">Login do Sistema</legend>
 			<div class="campo">
 				<div class="label">
 					<label for="Login">Login</label>
 				</div>
-				<input type="text" id="Login" name="Login" maxlength="15" />
+				<input type="text" id="Login" name="login" maxlength="15" value="${param.login}"/>
 			</div>
 
 			<div class="campo">
 				<div class="label">
 					<label for="senha">Senha</label>
 				</div>
-				<input type="password" id="senha" name="senha" maxlength="15" />
+				<input type="password" id="senha" name="senha" maxlength="15" value="${param.senha}" />
 			</div>
 
 			<div class="campo">

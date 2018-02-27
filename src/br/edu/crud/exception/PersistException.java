@@ -9,7 +9,7 @@ public class PersistException extends Exception{
 	}
 
 	public PersistException(Exception e) {
-		super(e);
+		super(e.getMessage());
 	}
 	
 	public PersistException(String erro, Exception e) {

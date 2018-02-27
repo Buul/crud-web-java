@@ -5,6 +5,10 @@ body, input {
 	font-size: 12pt;
 }
 
+a {
+	color: black;
+}
+
 input[type=text], input[type=password] {
 	width: 200px;
 	margin: 1px;
@@ -43,7 +47,8 @@ fieldset#fieldset_Login {
 .campo a {
 	padding-right: 93px;
 	float: right;
-	padding-top: 10px;	
+	padding-top: 10px;
+	color: black;
 }
 
 .main {
@@ -57,16 +62,20 @@ fieldset#fieldset_Login {
 	border-top: 1px dotted gray;
 }
 
-.cabecalho  {
+.cabecalho {
 	border-bottom: 1px dotted gray;
 	min-height: 60px
 }
 
-.cabecalho a{
+.cabecalho a {
 	text-decoration: none;
 }
 
-.cabecalho a:hover{
+.cabecalho a.selected {
+	font-weight: bold;
+}
+
+.cabecalho a:hover {
 	text-decoration: underline;
 }
 
@@ -75,9 +84,9 @@ fieldset#fieldset_Login {
 }
 
 .cabecalho .logo img {
-    width: 14%;
-    position: absolute;
-    top: -2px;
+	width: 154px;
+	position: absolute;
+	top: -2px;
 }
 
 .cabecalho ul, .cabecalho ol {
@@ -85,22 +94,26 @@ fieldset#fieldset_Login {
 	list-style: none;
 }
 
-.cabecalho li{
+.cabecalho li {
 	float: left;
 	margin: 0px 4px;
 	border-right: 1px solid gray;
 	padding-right: 5px
 }
 
+.boasVindas {
+	float: right;
+	clear: both;
+	margin-top: 12px;
+}
 
 
 
-
-
-
-
-
-
-
-
-
+/*Fim Estilo do cabeçalho e rodapé */
+.erroDiv {
+	min-height: 30px;
+	border: 2px solid red;
+	width: auto;
+	padding: 10px;
+	font-weight: bold
+}

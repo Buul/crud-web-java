@@ -12,11 +12,10 @@
 	<jsp:include page="cabecalho.jsp" />
 
 	<div class="main">
+	<h1>Algumo inesperado aconteceu :(</h1>
 		<fieldset>
-			<legend>CRUD Java</legend>
-			<h1>Olá, seja bem vindo ao CRUD Java</h1>
-			<h4>Esse é um sitema CRUD para cadastros e consulta de nossos
-				clientes</h4>
+			<legend>Dica</legend>
+			<h4>Entre em contato com o administrador</h4>
 		</fieldset>
 	</div>
 

@@ -1,6 +1,8 @@
 package br.edu.crud.servlet;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,45 +10,42 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.edu.crud.BO.UsuarioBO;
-import br.edu.crud.exception.NegocioException;
+import br.edu.crud.command.CadastroCommand;
+import br.edu.crud.command.Command;
+import br.edu.crud.command.LoginCommand;
 
 @WebServlet("/main")
 public class MainServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	private Map<String, Command> command = new HashMap<String, Command>();
+
+	@Override
+	public void init() throws ServletException {
+		command.put("login", new LoginCommand());
+		command.put("cadastros", new CadastroCommand());
+	}
+
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String acao = request.getParameter("acao");
 		String proxima = null;
-
-		switch (acao) {
-		case "sair":
-			proxima = "logout.jsp";
-			break;
-		case "consultas":
-			proxima = "consultas.jsp";
-			break;
-		case "cadastros":
-			proxima = "cadastros.jsp";
-			break;
-		case "login":
-			try {
-				new UsuarioBO().validarUsuario(request);
-			} catch (NegocioException e) {
-				request.setAttribute("msgErro", e.getMessage());
-				proxima = "login.jsp";
-			}
-			proxima = "index.jsp";
-			break;
-		default:
-			proxima = "index.jsp";
-			break;
+		try {
+			proxima = verificarCommand(acao).execute(request);
+		} catch (Exception e) {
+			request.setAttribute("msgErro", e.getMessage());
 		}
-
 		request.getRequestDispatcher(proxima).forward(request, response);
-
+	}
+	
+	private Command verificarCommand(String acao){
+		Command cExecute = null;
+		for (String key : command.keySet()) {
+			if (key.equalsIgnoreCase(acao))
+				cExecute = command.get(key);
+		}
+		return cExecute;
 	}
 }

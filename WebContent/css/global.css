@@ -9,16 +9,23 @@ a {
 	color: black;
 }
 
-input[type=text], input[type=password] {
-	width: 200px;
-	margin: 1px;
+select {
+	font-family: Segoe UI;
+	font-size: 12pt;
+	width: 300px;
 }
 
-input[type=submit] {
+input[type=text],input[type=password] {
+	width: 300px;
+}
+
+input[type=submit],input[type=reset] {
 	width: 100px;
 	font-weight: bold;
 	padding: 2px 10px;
-	margin-top: 10px;
+	margin: 5px; font-weight : bold;
+	float: right;
+	font-weight: bold;
 }
 
 fieldset#fieldset_Login {
@@ -34,7 +41,7 @@ fieldset#fieldset_Login {
 	padding-right: 2px;
 }
 
-.campo input {
+#fieldset_login .campo input {
 	float: right;
 }
 
@@ -52,7 +59,7 @@ fieldset#fieldset_Login {
 }
 
 .main {
-	min-height: 500px;
+	min-height: 551px;
 	clear: both;
 }
 
@@ -64,7 +71,7 @@ fieldset#fieldset_Login {
 
 .cabecalho {
 	border-bottom: 1px dotted gray;
-	min-height: 60px
+	min-height: 60px;
 }
 
 .cabecalho a {
@@ -92,13 +99,14 @@ fieldset#fieldset_Login {
 .cabecalho ul, .cabecalho ol {
 	float: right;
 	list-style: none;
+	padding-right: 10px;
 }
 
 .cabecalho li {
 	float: left;
 	margin: 0px 4px;
+	padding-right: 5px;
 	border-right: 1px solid gray;
-	padding-right: 5px
 }
 
 .boasVindas {
@@ -107,9 +115,8 @@ fieldset#fieldset_Login {
 	margin-top: 12px;
 }
 
-
-
 /*Fim Estilo do cabeçalho e rodapé */
+
 .erroDiv {
 	min-height: 30px;
 	border: 2px solid red;

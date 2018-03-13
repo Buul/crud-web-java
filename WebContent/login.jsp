@@ -8,12 +8,12 @@
 <title>Login</title>
 </head>
 <body>
-	<form method="post" action="main?acao=login">
-		<div class="erroDiv" style="display: ${msgErro != null ? 'block' : 'none'}">
-			${msgErro != null ? msgErro : ''}
-		</div>
-		<fieldset id="fieldset_Login">
-			<legend class="legend">Login do Sistema</legend>
+	<form method="post" id="login_form" action="main?acao=login">
+		<jsp:include page="msg.jsp"/>
+	
+		<fieldset id="fieldset_login">
+			<legend>Login do Sistema</legend>
+		
 			<div class="campo">
 				<div class="label">
 					<label for="Login">Login</label>

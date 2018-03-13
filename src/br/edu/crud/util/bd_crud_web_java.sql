@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `crud_java`.`tb_uf` (
   `tb_ufcol` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NULL DEFAULT NULL,
   PRIMARY KEY (`id_uf`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 28
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `crud_java`.`tb_cidade` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 7
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -108,20 +108,21 @@ CREATE TABLE IF NOT EXISTS `crud_java`.`tb_preferencia_pessoa` (
   `cod_preferencia` INT(11) NOT NULL,
   `cod_pessoa` INT(11) NOT NULL,
   PRIMARY KEY (`cod_preferencia`, `cod_pessoa`),
-  INDEX `fk_tb_pessoa_has_tb_preferencia_tb_preferencia1_idx` (`cod_pessoa` ASC),
-  INDEX `fk_tb_pessoa_has_tb_preferencia_tb_pessoa1_idx` (`cod_preferencia` ASC),
-  CONSTRAINT `fk_tb_pessoa_has_tb_preferencia_tb_pessoa1`
+  INDEX `fk_tb_preferencia_has_tb_pessoa_tb_pessoa1_idx` (`cod_pessoa` ASC),
+  INDEX `fk_tb_preferencia_has_tb_pessoa_tb_preferencia1_idx` (`cod_preferencia` ASC),
+  CONSTRAINT `fk_tb_preferencia_has_tb_pessoa_tb_preferencia1`
     FOREIGN KEY (`cod_preferencia`)
-    REFERENCES `crud_java`.`tb_pessoa` (`id_pessoa`)
+    REFERENCES `crud_java`.`tb_preferencia` (`id_preferencia`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tb_pessoa_has_tb_preferencia_tb_preferencia1`
+  CONSTRAINT `fk_tb_preferencia_has_tb_pessoa_tb_pessoa1`
     FOREIGN KEY (`cod_pessoa`)
-    REFERENCES `crud_java`.`tb_preferencia` (`id_preferencia`)
+    REFERENCES `crud_java`.`tb_pessoa` (`id_pessoa`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1
+COLLATE = latin1_swedish_ci;
 
 
 -- -----------------------------------------------------
@@ -133,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `crud_java`.`tb_usuario` (
   `SENHA` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`ID_USUARIO`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
 
 

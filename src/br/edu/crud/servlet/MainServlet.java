@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.edu.crud.command.CadastroPessoaCommand;
 import br.edu.crud.command.Command;
+import br.edu.crud.command.ConsultasPessoaCommand;
 import br.edu.crud.command.LoginCommand;
 import br.edu.crud.command.MontagemCadastroCommand;
 
@@ -27,6 +28,7 @@ public class MainServlet extends HttpServlet {
 		command.put("login", new LoginCommand());
 		command.put("montagemCadastro", new MontagemCadastroCommand());
 		command.put("cadastroPessoa", new CadastroPessoaCommand());
+		command.put("consultas", new ConsultasPessoaCommand());
 	}
 
 	@Override

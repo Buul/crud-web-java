@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import br.edu.crud.dao.CadastroDAO;
+import br.edu.crud.dao.PessoaDAO;
 import br.edu.crud.dto.CidadeDTO;
 import br.edu.crud.dto.PreferenciaMusicalDTO;
 import br.edu.crud.dto.UfDTO;
@@ -14,10 +14,10 @@ public class MontagemCadastroCommand implements Command {
 	
 	private String proximo;
 	
-	private CadastroDAO cadastroDAO;
+	private PessoaDAO pessoaDAO;
 	
 	public String execute(HttpServletRequest request) {
-		cadastroDAO = new CadastroDAO();
+		pessoaDAO = new PessoaDAO();
 		proximo = "cadastroPessoa.jsp";
 		String getCidades = request.getParameter("getCidades");
 		
@@ -26,11 +26,11 @@ public class MontagemCadastroCommand implements Command {
 				String id = request.getParameter("idEstado");
 				int idEstado = Integer.parseInt(id);
 				
-				List<CidadeDTO> listaCidades = cadastroDAO.consultarCidadesPorEstado(idEstado);
+				List<CidadeDTO> listaCidades = pessoaDAO.consultarCidadesPorEstado(idEstado);
 				request.setAttribute("listaCidades", listaCidades);
 			} else {
-				List<UfDTO> listaUFs = cadastroDAO.listarUFs();
-				List<PreferenciaMusicalDTO> listaPreferencias = cadastroDAO.listarPreferencias();
+				List<UfDTO> listaUFs = pessoaDAO.listarUFs();
+				List<PreferenciaMusicalDTO> listaPreferencias = pessoaDAO.listarPreferencias();
 				request.getSession().setAttribute("listaUF", listaUFs);
 				request.getSession().setAttribute("listaPreferencias", listaPreferencias);
 			}

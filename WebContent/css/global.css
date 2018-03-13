@@ -9,6 +9,11 @@ a {
 	color: black;
 }
 
+span {
+	margin: 5px;
+	padding: 5px;
+}
+
 select {
 	font-family: Segoe UI;
 	font-size: 12pt;
@@ -19,11 +24,12 @@ input[type=text],input[type=password] {
 	width: 300px;
 }
 
-input[type=submit],input[type=reset] {
+input[type=submit],input[type=reset],input[type=button] {
 	width: 100px;
 	font-weight: bold;
 	padding: 2px 10px;
-	margin: 5px; font-weight : bold;
+	margin: 5px; 
+	font-weight : bold;
 	float: right;
 	font-weight: bold;
 }
@@ -59,7 +65,7 @@ fieldset#fieldset_Login {
 }
 
 .main {
-	min-height: 551px;
+	min-height: 568px;
 	clear: both;
 }
 
@@ -118,9 +124,45 @@ fieldset#fieldset_Login {
 /*Fim Estilo do cabeçalho e rodapé */
 
 .erroDiv {
-	min-height: 30px;
+	min-height: 25px;
 	border: 2px solid red;
 	width: auto;
 	padding: 10px;
-	font-weight: bold
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+.sucDiv {
+	min-height: 25px;
+	border: 2px solid green;
+	width: auto;
+	padding: 10px;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+.avisoDiv {
+	min-height: 25px;
+	border: 2px solid orange;
+	width: auto;
+	padding: 10px;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+/* Estilo referente às tabelas */
+.alignLeft {
+	text-align: left;
+}
+
+.alignCenter {
+	text-align: center;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+table img {
+	width: 25px;
 }
